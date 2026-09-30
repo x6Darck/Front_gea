@@ -1,14 +1,42 @@
 # GEA - Frontend Platform
 
-GEA (Gestión de Eventos y Anuncios) es una plataforma institucional para la gestión de eventos, calendarios, espacios físicos, reservas y anuncios públicos.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Shadcn/UI](https://img.shields.io/badge/Shadcn%2FUI-000000?style=flat&logo=shadcnui&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white)
+![Estado](https://img.shields.io/badge/Estado-Completado-2EA44F?style=flat)
+
+**GEA (Gestión de Eventos y Anuncios)** es una plataforma institucional para la gestión de eventos, calendarios, espacios físicos, reservas y anuncios públicos.
 
 Este repositorio contiene el **frontend web de GEA**, desarrollado con **React**, encargado de proporcionar la interfaz de administración para la gestión de los diferentes recursos de la plataforma y de comunicarse con el backend mediante una API REST.
 
-GEA fue desarrollado como un **proyecto real para una institución universitaria**, siendo la plataforma web, junto con el backend y la aplicación móvil, diseñada, estructurada y programada individualmente.
+GEA fue desarrollado como un **proyecto real para una institución universitaria**. La plataforma web, junto con el backend y la aplicación móvil, fue diseñada, estructurada y programada de forma individual.
 
 ---
 
-## 🚀 Características Principales
+## 📑 Tabla de contenido
+
+- [Características principales](#-características-principales)
+- [Arquitectura](#️-arquitectura)
+- [Stack tecnológico](#-stack-tecnológico)
+- [Autenticación y seguridad](#-autenticación-y-seguridad)
+- [Integración con el backend](#-integración-con-el-backend)
+- [Requisitos](#-requisitos)
+- [Instalación y ejecución local](#️-instalación-y-ejecución-local)
+- [Compilación para producción](#-compilación-para-producción)
+- [Calidad y linting](#-calidad-y-linting)
+- [Estructura del proyecto](#️-estructura-del-proyecto)
+- [Ecosistema GEA](#-ecosistema-gea)
+- [Entornos](#-entornos)
+- [Estado del proyecto](#-estado-del-proyecto)
+- [Desarrollo](#-desarrollo)
+- [Propiedad y uso](#-propiedad-y-uso)
+- [Autor](#-autor)
+
+---
+
+## 🚀 Características principales
 
 - **Gestión de eventos:** consulta, administración y seguimiento de eventos institucionales.
 - **Gestión de anuncios:** administración y publicación de información institucional.
@@ -19,9 +47,9 @@ GEA fue desarrollado como un **proyecto real para una institución universitaria
 - **Navegación protegida:** protección de rutas que requieren autenticación.
 - **Comunicación con API REST:** integración con el backend mediante Axios.
 - **Interfaz responsive:** adaptación de la plataforma a diferentes tamaños de pantalla.
-- **Componentes reutilizables:** implementación de una estructura basada en componentes para facilitar el mantenimiento.
+- **Componentes reutilizables:** estructura basada en componentes para facilitar el mantenimiento.
 - **Validación de formularios:** validación de datos antes de enviarlos al backend.
-- **Sistema de diseño:** componentes construidos utilizando Shadcn/UI y Lucide Icons.
+- **Sistema de diseño:** componentes construidos con Shadcn/UI y Lucide Icons.
 
 ---
 
@@ -89,7 +117,7 @@ El frontend consume los endpoints proporcionados por el backend y utiliza la inf
 
 ---
 
-## 🧰 Stack Tecnológico
+## 🧰 Stack tecnológico
 
 | Tecnología | Uso |
 |---|---|
@@ -106,7 +134,7 @@ El frontend consume los endpoints proporcionados por el backend y utiliza la inf
 
 ---
 
-## 🔐 Autenticación y Seguridad
+## 🔐 Autenticación y seguridad
 
 La plataforma web utiliza el sistema de autenticación proporcionado por el backend de GEA.
 
@@ -136,18 +164,18 @@ Acceso a rutas protegidas
 
 ### Implementación
 
-- Autenticación mediante JWT.
-- Gestión del estado de autenticación mediante `AuthContext`.
-- Protección de rutas privadas.
-- Envío del token mediante solicitudes HTTP.
-- Control de acceso según la información proporcionada por el backend.
-- Configuración de la URL de la API mediante variables de entorno.
+- Autenticación mediante JWT
+- Gestión del estado de autenticación mediante `AuthContext`
+- Protección de rutas privadas
+- Envío del token mediante solicitudes HTTP
+- Control de acceso según la información proporcionada por el backend
+- Configuración de la URL de la API mediante variables de entorno
 
-La autenticación y autorización son gestionadas por el backend, mientras que el frontend administra la experiencia de inicio de sesión y el acceso a las diferentes vistas de la plataforma.
+La autenticación y la autorización son gestionadas por el backend, mientras que el frontend administra la experiencia de inicio de sesión y el acceso a las diferentes vistas de la plataforma.
 
 ---
 
-## 🔗 Integración con el Backend
+## 🔗 Integración con el backend
 
 El frontend se comunica con **GEA Backend** mediante una API REST.
 
@@ -157,7 +185,7 @@ La URL del backend se configura mediante una variable de entorno:
 VITE_API_URL=http://localhost:8083
 ```
 
-Esto permite utilizar diferentes instancias del backend dependiendo del entorno de ejecución sin modificar directamente el código de la aplicación.
+Esto permite utilizar diferentes instancias del backend según el entorno de ejecución, sin modificar directamente el código de la aplicación.
 
 ---
 
@@ -169,16 +197,16 @@ Para ejecutar el proyecto localmente se requiere:
 - npm
 - Git
 
-Se recomienda utilizar una versión de Node.js compatible con React 19 y las dependencias definidas en `package.json`.
+Se recomienda utilizar una versión de Node.js compatible con React 19 y con las dependencias definidas en `package.json`.
 
 ---
 
-## ⚙️ Instalación y Ejecución Local
+## ⚙️ Instalación y ejecución local
 
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <https://github.com/x6Darck/Front_gea.git>
+git clone https://github.com/x6Darck/Front_gea.git
 cd Front_gea
 ```
 
@@ -190,7 +218,7 @@ npm install
 
 ### 3. Configurar variables de entorno
 
-Crea un archivo `.env` en la raíz del proyecto tomando como referencia `.env.example`.
+Crea un archivo `.env` en la raíz del proyecto tomando como referencia `.env.example`:
 
 ```env
 VITE_API_URL=http://localhost:8083
@@ -198,7 +226,8 @@ VITE_API_URL=http://localhost:8083
 
 Configura la URL correspondiente a la instancia del backend que deseas utilizar.
 
-> **Importante:** los archivos `.env` con configuraciones privadas no deben subirse al repositorio.
+> [!IMPORTANT]
+> Los archivos `.env` con configuraciones privadas no deben subirse al repositorio.
 
 ### 4. Iniciar el servidor de desarrollo
 
@@ -214,7 +243,7 @@ http://localhost:5173
 
 ---
 
-## 📦 Compilación para Producción
+## 📦 Compilación para producción
 
 Para generar una versión optimizada para producción:
 
@@ -238,7 +267,7 @@ npm run preview
 
 ---
 
-## 🧪 Calidad y Linting
+## 🧪 Calidad y linting
 
 El proyecto utiliza **ESLint** para detectar problemas potenciales y mantener una estructura consistente en el código.
 
@@ -252,7 +281,7 @@ Se recomienda ejecutar el proceso de linting antes de integrar nuevos cambios al
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## 🗂️ Estructura del proyecto
 
 ```text
 Front_gea/
@@ -295,11 +324,11 @@ Front_gea/
 
 ## 🔄 Ecosistema GEA
 
-El frontend forma parte de un ecosistema compuesto por tres aplicaciones principales:
+El frontend forma parte de un ecosistema compuesto por tres aplicaciones principales.
 
 ### ⚙️ GEA Backend
 
-API REST desarrollada con **Java y Spring Boot**, encargada de la lógica de negocio, persistencia, autenticación, autorización y comunicación con la base de datos.
+API REST desarrollada con **Java y Spring Boot**, encargada de la lógica de negocio, la persistencia, la autenticación, la autorización y la comunicación con la base de datos.
 
 **Tecnologías principales:**
 
@@ -312,13 +341,7 @@ API REST desarrollada con **Java y Spring Boot**, encargada de la lógica de neg
 - Hibernate Envers
 - Swagger / OpenAPI
 
-Repositorio:
-
-```text
-https://github.com/x6Darck/Backend_gea
-```
-
----
+**Repositorio:** [github.com/x6Darck/Backend_gea](https://github.com/x6Darck/Backend_gea)
 
 ### 📱 GEA Mobile
 
@@ -336,46 +359,40 @@ La aplicación utiliza **Clean Architecture**, Riverpod para la gestión de esta
 - Flutter Secure Storage
 - Shared Preferences
 
-Repositorio:
-
-```text
-https://github.com/x6Darck/Movil_gea
-```
-
----
+**Repositorio:** [github.com/x6Darck/Movil_gea](https://github.com/x6Darck/Movil_gea)
 
 ### 🔄 Comunicación entre aplicaciones
 
 ```text
-                    ┌───────────────────┐
-                    │   GEA Frontend    │
-                    │      React        │
-                    └─────────┬─────────┘
-                              │
-                              │ REST API
-                              │
-                    ┌─────────▼─────────┐
-                    │                   │
-                    │    GEA Backend    │
-                    │   Spring Boot     │
-                    │                   │
-                    └─────────┬─────────┘
-                              │
-                              │ JPA
-                              │
-                    ┌─────────▼─────────┐
-                    │       MySQL       │
-                    └───────────────────┘
-                              ▲
-                              │
-                              │ REST API
-                              │
-                    ┌─────────┴─────────┐
-                    │                   │
-                    │    GEA Mobile     │
-                    │      Flutter      │
-                    │                   │
-                    └───────────────────┘
+                ┌───────────────────┐
+                │   GEA Frontend    │
+                │       React       │
+                └─────────┬─────────┘
+                          │
+                          │ REST API
+                          │
+                ┌─────────▼─────────┐
+                │                   │
+                │    GEA Backend    │
+                │    Spring Boot    │
+                │                   │
+                └─────────┬─────────┘
+                          │
+                          │ JPA
+                          │
+                ┌─────────▼─────────┐
+                │       MySQL       │
+                └───────────────────┘
+                          ▲
+                          │
+                          │ REST API
+                          │
+                ┌─────────┴─────────┐
+                │                   │
+                │    GEA Mobile     │
+                │      Flutter      │
+                │                   │
+                └───────────────────┘
 ```
 
 El backend funciona como punto central de comunicación entre la plataforma web, la aplicación móvil y la base de datos.
@@ -387,37 +404,22 @@ El backend funciona como punto central de comunicación entre la plataforma web,
 La plataforma está preparada para trabajar con diferentes instancias del backend según el entorno utilizado.
 
 ```text
-Desarrollo
-     │
-     ▼
-GEA Backend
-     │
-     └── GEA Frontend
-
-
-Pruebas
-     │
-     ▼
-GEA Backend
-     │
-     └── GEA Frontend
-
-
-Producción
-     │
-     ▼
-GEA Backend
-     │
-     └── GEA Frontend
+Desarrollo / Pruebas / Producción
+               │
+               ▼
+          GEA Backend
+               │
+               ▼
+          GEA Frontend
 ```
 
 La URL correspondiente a cada entorno se configura mediante variables de entorno, evitando modificar directamente el código fuente.
 
 ---
 
-## 📌 Estado del Proyecto
+## 📌 Estado del proyecto
 
-**Estado: Completado**
+**Estado:** Completado
 
 GEA fue desarrollado como un proyecto real para una institución universitaria, contemplando una plataforma web, una aplicación móvil y una API REST centralizada.
 
@@ -425,25 +427,25 @@ GEA fue desarrollado como un proyecto real para una institución universitaria, 
 
 ## 👨‍💻 Desarrollo
 
-GEA fue **diseñado, estructurado y desarrollado individualmente**, incluyendo:
+GEA fue **diseñado, estructurado y desarrollado de forma individual**, incluyendo:
 
-- Diseño y desarrollo de la interfaz web.
-- Arquitectura y organización del frontend.
-- Desarrollo de componentes reutilizables.
-- Implementación del sistema de navegación.
-- Implementación del flujo de autenticación.
-- Integración con la API REST.
-- Gestión del estado de autenticación.
-- Validación de formularios.
-- Diseño y adaptación de la interfaz.
-- Integración con los diferentes módulos del sistema.
-- Integración con el backend y la aplicación móvil.
+- Diseño y desarrollo de la interfaz web
+- Arquitectura y organización del frontend
+- Desarrollo de componentes reutilizables
+- Implementación del sistema de navegación
+- Implementación del flujo de autenticación
+- Integración con la API REST
+- Gestión del estado de autenticación
+- Validación de formularios
+- Diseño y adaptación de la interfaz
+- Integración con los diferentes módulos del sistema
+- Integración con el backend y la aplicación móvil
 
 El frontend fue desarrollado con un enfoque orientado a la **reutilización de componentes, mantenibilidad, separación de responsabilidades y consistencia visual**.
 
 ---
 
-## 📄 Propiedad y Uso
+## 📄 Propiedad y uso
 
 GEA es un proyecto desarrollado para una institución universitaria como parte de un proyecto real de desarrollo de software.
 
@@ -453,12 +455,12 @@ Los derechos sobre el proyecto, sus componentes y materiales asociados correspon
 
 El repositorio no incluye:
 
-- Credenciales.
-- Contraseñas.
-- Datos personales.
-- Información sensible.
-- Configuraciones privadas.
-- Secretos de autenticación.
+- Credenciales
+- Contraseñas
+- Datos personales
+- Información sensible
+- Configuraciones privadas
+- Secretos de autenticación
 
 ---
 
@@ -470,6 +472,7 @@ Desarrollo individual del ecosistema GEA.
 
 ---
 
-> GEA — Gestión de Eventos y Anuncios
->
-> Sistema institucional desarrollado con Java, Spring Boot, React y Flutter.
+<p align="center">
+  <strong>GEA — Gestión de Eventos y Anuncios</strong><br>
+  Sistema institucional desarrollado con Java, Spring Boot, React y Flutter.
+</p>
