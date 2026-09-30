@@ -1,0 +1,49 @@
+.header { margin-bottom: 24px; }
+
+.filterToolbar { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+
+.searchInput {
+  width: 320px; max-width: 100%; padding: 10px 14px 10px 42px;
+  border-radius: var(--radius-md); border: 1px solid var(--border);
+  font-size: 14px; outline: none; background: var(--surface); color: var(--text-main);
+}
+.searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+
+.filterRow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+
+.filterInput {
+  height: 36px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); font-size: 0.85rem; background: var(--surface); color: var(--text-main);
+}
+
+.filterLabel { font-size: 0.78rem; color: var(--text-secondary); font-weight: 600; }
+
+.clearBtn {
+  margin-left: auto; padding: 0 16px; height: 36px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-secondary);
+  font-weight: 600; font-size: 0.82rem; cursor: pointer;
+}
+
+.tableContainer { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-muted); padding: 10px 14px; border-bottom: 1px solid var(--border);
+}
+.table td { padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-main); }
+
+.badgeOk, .badgeFail {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px;
+  border-radius: var(--radius-pill); font-size: 11px; font-weight: 700;
+}
+.badgeOk { background-color: var(--success-soft); color: var(--success-on-soft); }
+.badgeFail { background-color: var(--danger-soft); color: var(--danger-on-soft); }
+
+.pagination { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 16px 0 4px; }
+.pageBtn {
+  display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px;
+  border-radius: var(--radius-pill); border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-secondary); font-weight: 600; font-size: 0.82rem; cursor: pointer;
+}
+.pageBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.pageInfo { font-size: 0.82rem; color: var(--text-secondary); }

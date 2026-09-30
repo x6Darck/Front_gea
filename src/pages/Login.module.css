@@ -1,0 +1,227 @@
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--canvas);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Profundidad ambiental: focos cálidos muy sutiles (no fondo plano) */
+.loginContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(55% 45% at 12% 8%, rgba(206, 17, 38, 0.05), transparent 60%),
+    radial-gradient(45% 45% at 92% 92%, rgba(206, 17, 38, 0.04), transparent 60%);
+  pointer-events: none;
+}
+
+.brandCorner {
+  position: absolute;
+  top: 32px;
+  left: 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.logoWrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.brandName {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.loginBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 1;
+  animation: cardIn 480ms var(--ease-out) both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.brandMark {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--primary-soft);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.brandMark img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.inputGroup label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.inputGroup input {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  font-size: var(--text-base);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color var(--dur) var(--ease-standard),
+              box-shadow var(--dur) var(--ease-standard);
+}
+
+.inputGroup input:hover {
+  border-color: var(--text-muted);
+}
+
+.inputGroup input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.submitBtn {
+  margin-top: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 13px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: 0.01em;
+  border: none;
+  transition: background-color var(--dur) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.submitBtn:hover { background: var(--primary-hover); }
+.submitBtn:active { transform: scale(0.985); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--danger-soft);
+  color: var(--danger-on-soft);
+  border: 1px solid #f4cfd0;
+  padding: 10px 13px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  animation: shakeError 0.3s ease;
+}
+
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.inputError {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 3px var(--danger-soft) !important;
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordWrapper input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: color var(--dur) var(--ease-standard),
+              background-color var(--dur) var(--ease-standard);
+}
+
+.eyeBtn:hover {
+  color: var(--text-main);
+  background: var(--surface-2);
+}
+
+@media (max-width: 480px) {
+  .loginBox { padding: 32px 22px; }
+  .brandCorner { top: 20px; left: 20px; }
+}

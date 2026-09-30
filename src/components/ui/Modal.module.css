@@ -1,0 +1,97 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 18, 16, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal-backdrop);
+  animation: fadeIn 0.2s var(--ease-out) forwards;
+}
+
+.overlayClosing {
+  animation: fadeOut 0.2s ease forwards;
+}
+
+.modal {
+  background: var(--surface) !important;
+  opacity: 1 !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-modal);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  animation: scaleIn 0.22s var(--ease-spring) forwards;
+  z-index: var(--z-modal);
+}
+
+.modalClosing {
+  animation: scaleOut 0.18s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+}
+
+.closeBtn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-standard),
+              color var(--dur) var(--ease-standard),
+              transform var(--dur) var(--ease-out);
+}
+
+.closeBtn:hover {
+  background: var(--surface-3);
+  color: var(--text-main);
+}
+
+.body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes scaleOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(0.96) translateY(8px); }
+}
+
+.body::-webkit-scrollbar { width: 6px; }
+.body::-webkit-scrollbar-track { background: transparent; }
+.body::-webkit-scrollbar-thumb { background: var(--border); border-radius: var(--radius-pill); }
+.body::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }

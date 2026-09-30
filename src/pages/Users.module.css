@@ -1,0 +1,387 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--surface-2);
+}
+
+.controlsBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.searchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 300px;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+}
+
+.roleSelect {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--success);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.createBtn {
+  margin-left: auto;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-standard),
+              box-shadow var(--dur) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.createBtn:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.createBtn:active { transform: scale(0.98); }
+
+.rolesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-flow: dense;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.roleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* La sección de Oficina (con muchos usuarios) se expande para llenar el espacio */
+.bigSection {
+  grid-column: span 2;
+}
+
+@media (max-width: 1100px) {
+  .bigSection {
+    grid-column: span 1;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bigSection {
+    grid-column: span 3;
+  }
+}
+
+/* Si hay espacio de sobra (zoom out), asegurar que los cards internos se expandan */
+.roleSection > div {
+  width: 100%;
+}
+
+.roleTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.userCard {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  display: flex;
+  gap: 16px;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur) var(--ease-standard),
+              transform var(--dur) var(--ease-out),
+              border-color var(--dur) var(--ease-standard);
+}
+
+.userCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.userAvatar {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.userAvatar svg {
+  width: 24px;
+  height: 24px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.userInfo h4 {
+  font-size: 1.1rem;
+  margin: 0 0 6px 0;
+  font-weight: 800;
+  color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.userInfo p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.editBtn, .viewBtn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-standard),
+              color var(--dur) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-out);
+  flex: 1;
+  border: none;
+}
+
+.editBtn {
+  background-color: var(--surface-2);
+  color: var(--text-secondary);
+}
+
+.viewBtn {
+  background-color: var(--info-soft);
+  color: var(--info-on-soft);
+}
+
+.editBtn:hover {
+  background-color: var(--border);
+  color: var(--text-secondary);
+}
+
+.viewBtn:hover {
+  background-color: var(--info-soft);
+  color: var(--info-on-soft);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.activeBadge {
+  background-color: var(--success-soft);
+  color: var(--success-on-soft);
+}
+
+.inactiveBadge {
+  background-color: var(--danger-soft);
+  color: var(--danger-on-soft);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.activeDot { background-color: var(--success); }
+.inactiveDot { background-color: var(--danger); }
+
+/* ─── Filter Toolbar ─────────────────────────────────────── */
+.filterToolbar {
+  background: var(--surface-2);
+  border: 1px solid var(--surface-2);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 11px 16px 11px 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: #fff;
+  color: var(--text-main);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.searchInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 0 14px;
+  height: 36px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: white;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.filterSelect:hover {
+  border-color: var(--border-strong);
+}
+
+.filterSelect:focus {
+  border-color: var(--text-main);
+}
+
+.filterDivider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.tabBtn {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0 14px;
+  height: 36px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-standard),
+              border-color var(--dur) var(--ease-standard),
+              color var(--dur) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-main);
+  background-color: var(--surface-2);
+}
+
+.tabBtn.active {
+  background-color: var(--text-main);
+  color: white;
+  border-color: var(--text-main);
+  box-shadow: 0 4px 10px rgba(20,18,16,0.12);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 3.5rem;
+  }
+
+  .createBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .filterToolbar {
+    padding: 12px 14px;
+  }
+
+  .filterRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterSelect {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .filterDivider {
+    display: none;
+  }
+}

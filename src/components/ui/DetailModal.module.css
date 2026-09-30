@@ -1,0 +1,273 @@
+/* DetailModal.module.css */
+
+.container {
+  padding-right: 8px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  transform: translateZ(0);
+}
+
+.statusBar {
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.statusIconContainer {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.statusLabel {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statusValue {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text-main);
+}
+
+.fieldLabel {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.5px;
+}
+
+.fieldValue {
+  font-size: 14px;
+  color: var(--text-main);
+  font-weight: bold;
+  min-height: 18px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  outline: none;
+  transition: border-color var(--dur) var(--ease-standard),
+              box-shadow var(--dur) var(--ease-standard);
+  background-color: var(--surface);
+}
+
+.inputField:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.card {
+  background: var(--surface);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.cardGrey {
+  background: var(--surface);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.cardGradRed {
+  background: var(--surface);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.participantBadge {
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur) var(--ease-standard),
+              border-color var(--dur) var(--ease-standard);
+}
+
+.participantBadge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-strong);
+}
+
+.participantAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.participantName {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+.participantRole {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.participantBadgeSmall {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out),
+              background-color var(--dur) var(--ease-standard),
+              border-color var(--dur) var(--ease-standard);
+}
+
+.participantBadgeSmall:hover {
+  transform: translateY(-1px);
+  background-color: var(--surface);
+  border-color: var(--border-strong);
+}
+
+.participantAvatarSmall {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.actionPanel {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.actionPanelTitle {
+  margin: 0 0 16px 0;
+  color: var(--text-main);
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btnPrimary {
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color var(--dur) var(--ease-standard),
+              box-shadow var(--dur) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnPrimary:not(:disabled):hover { background: var(--primary-hover); box-shadow: var(--shadow-sm); }
+.btnPrimary:not(:disabled):active { transform: scale(0.98); }
+
+.btnSecondary {
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  background-color: var(--surface);
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-standard),
+              border-color var(--dur) var(--ease-standard),
+              color var(--dur) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.btnSecondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnSecondary:not(:disabled):hover { background-color: var(--surface-2); color: var(--text-main); }
+.btnSecondary:not(:disabled):active { transform: scale(0.98); }
+
+.btnDanger {
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--text-main);
+  color: white;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-standard),
+              box-shadow var(--dur) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.btnDanger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnDanger:not(:disabled):hover { background: #000; box-shadow: var(--shadow-sm); }
+.btnDanger:not(:disabled):active { transform: scale(0.98); }
